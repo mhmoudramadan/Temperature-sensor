@@ -34,12 +34,12 @@ int main(void)
 	/*Set ADC channel 1 as input*/
 	MDIO_Errorstate_SetPinDirection(MDIO_PORTA,PIN1,PIN_INPUT);
 	HTEMP_VidInit();
-	uint16 Loc_uint8Temp=0;
+	uint16 Loc_uint16Temp=0;
 	while(1)
 	{
-		Loc_uint8Temp=HTEMP_uintGetTemp(1);
+		Loc_uint16Temp=HTEMP_uintGetTemp(1);
 		HAL_VidHCLCD_4BitModeSetPosition(2,0);
-		HAL_VidHCLCD_4BitModeWriteNumber(Loc_uint8Temp);
+		HAL_VidHCLCD_4BitModeWriteNumber(Loc_uint16Temp);
 	}
 	return 0;
 }
